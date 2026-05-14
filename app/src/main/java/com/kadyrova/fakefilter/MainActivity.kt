@@ -40,6 +40,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun FakeCheckerScreen() {
     var inputText by remember { mutableStateOf("")}
+var resultText by remember { mutableStateOf("")}
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -64,4 +65,9 @@ fun FakeCheckerScreen() {
                 onClick = { },
                 modifier = Modifier.fillMaxWidth()
             ) { Text(text = "Prüfen")}
+        Spacer(modifier = Modifier.height(24.dp))
+
+        if(resultText.isNotEmpty()) {
+            Text(text = resultText)
+        }
     }}
